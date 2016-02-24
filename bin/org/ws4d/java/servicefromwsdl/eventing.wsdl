@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- This is an auto-generated WSDL from JMEDS.
+Copyright (c) 2009 MATERNA Information & Communications and TU Dortmund, Dpt. of Computer Science, Chair 4, Distributed Systems.
+All rights reserved.
+JMEDS and the accompanying materials are made available under the terms of the Eclipse Public License v1.0
+which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html -->
+<wsdl:definitions targetNamespace="http://www.mydemo.com/tutorial" xmlns:n1="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s12="http://www.w3.org/2003/05/soap-envelope" xmlns:tns="http://www.mydemo.com/tutorial" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <wsdl:types>
+        <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.mydemo.com/tutorial" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <xs:element name="addToCounter" type="xs:int"/>
+            <xs:element name="counter" type="xs:int"/>
+            <xs:element name="name" type="xs:string"/>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="DocuExampleSimpleEventMessage">
+        <wsdl:part element="tns:name" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="DocuExampleComplexEventSolicitMessage">
+        <wsdl:part element="tns:counter" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="DocuExampleComplexEventResponseMessage">
+        <wsdl:part element="tns:addToCounter" name="parameters"/>
+    </wsdl:message>
+    <wsdl:portType n2:EventSource="true" name="BasicServices" xmlns:n2="http://schemas.xmlsoap.org/ws/2004/08/eventing">
+        <wsdl:operation name="DocuExampleSimpleEvent">
+            <wsdl:output message="tns:DocuExampleSimpleEventMessage" name="DocuExampleSimpleEvent" wsam:Action="http://www.mydemo.com/tutorial/BasicServices/DocuExampleSimpleEvent"/>
+        </wsdl:operation>
+        <wsdl:operation name="DocuExampleComplexEvent">
+            <wsdl:output message="tns:DocuExampleComplexEventSolicitMessage" name="DocuExampleComplexEventSolicit" wsam:Action="http://www.mydemo.com/tutorial/BasicServices/DocuExampleComplexEventSolicit"/>
+            <wsdl:input message="tns:DocuExampleComplexEventResponseMessage" name="DocuExampleComplexEventResponse" wsam:Action="http://www.mydemo.com/tutorial/BasicServices/DocuExampleComplexEventResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="BasicServicesBinding" type="tns:BasicServices">
+        <n1:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="DocuExampleSimpleEvent">
+            <n1:operation soapAction="http://www.mydemo.com/tutorial/BasicServices/DocuExampleSimpleEvent"/>
+            <wsdl:output>
+                <n1:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="DocuExampleComplexEvent">
+            <n1:operation soapAction="http://www.mydemo.com/tutorial/BasicServices/DocuExampleComplexEventSolicit"/>
+            <wsdl:input>
+                <n1:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <n1:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="DocuExampleEventService">
+        <wsdl:port binding="tns:BasicServicesBinding" name="BasicServicesPort0">
+            <n1:address location="http://127.0.0.1:5678/docuEventService"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

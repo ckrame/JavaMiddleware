@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<title>org.ws4d.java.attachment package</title>
+</head>
+<body>
+<p>Provides support for Attachment handling and storing.</p>
+
+<p><code>AbstractAttachment</code> extends the <code>Attachment</code> interface (see 'org.ws4d.java.attachment'). Provides access to the metadata (content ID, content type,
+transfer encoding) and raw data of an attachment. Is a container for Attachment properties. 
+
+<code>DefaultAttachmentStore</code> extends <code>AttachmentStore</code> and defines the common ground for
+storing attachments. Specific types of storage are handled by extending classes.
+</p>
+<p>Attachments can be stored in three different ways:</p>
+<ul>
+<li>within memory (as a byte buffer), see the <code>MemoryAttachment</code> class</li>
+<li>within external storage (like the file system), see the <code>FileAttachment</code> class</li>
+<li>as a byte stream, see the classes <code>InputStreamAttachment</code> and <code>OutputStreamAttachment</code></li>
+</ul>
+</body>
+</html>

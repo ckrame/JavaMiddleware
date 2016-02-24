@@ -1,0 +1,16 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<title>org.ws4d.java.communication.connection.tcp package</title>
+</head>
+<body>
+<p>Platform independent server socket/connection and TCP connection framework.</p>
+<p>Defines two interfaces <code>Socket</code> and <code>ServerSocket</code> which respectively
+define a platform independent server socket and connection (see implementing classes for platform specific implementation).</p>
+<p>Implements a TCP connection framework, that is, a TCP client (<code>TCPClient</code>), a TCP server, which can open and close a server
+socket for a given address and port. The socket implementation is stored in <code>TCPConnection</code>, to ensure that the socket can be correctly closed. A TCP Listener is further
+implemented <code>TCPListener</code>, which will listen for incoming connections. Each  received connection will then be handled in a separate thread
+by implementations of the interface <code>TCPConnectionHandler</code>.</p>
+
+</body>
+</html>

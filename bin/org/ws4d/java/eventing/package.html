@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<title>org.ws4d.java package.eventing</title>
+</head>
+<body>
+<p>
+Implements classes responsible for the handling of events by clients.
+</p>
+
+<p>
+An <code>EventSink</code> is the interface used by a client to receive events. An open <code>EventSink</code> can listen to two
+types of <code>EventSources</code>: <i>notifications</i> and <i>solicit-response</i> operations.
+</p>
+<p>
+Incoming notifications received via an open <code>EventSink</code> instance are handled by an <code>EventListener</code>.
+Each implementing class should provide a specific handling procedure under the <code>eventreceived</code> method.
+</p>
+<p>
+Subscriptions can be viewed and managed by the client via the <code>ClientInterface</code> interface 
+(renew, subscribe, get status, get information about the subscriptions).
+</p>
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,15 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<title>org.ws4d.java.communcation.connection.tcp package</title>
+</head>
+<body>
+
+<p>UDP Client and Server implementation.</p>
+<p>The UDP server's (<code>UDPServer</code>)open and close methods open/close a datagram socket (<code>DatagramSocket</code> interface. Implementing classes should be platform specific) for a given address and port, which will start a UDP Listener.
+ This UDP listener (<code>UDPListener</code>) therefore listens to this given address and port for incoming datagram packets,
+which it then passes on the the UDP Datagram Handler (<code>UDPDatagramHandler</code>) which will open each datagram packet in a separate thread. 
+A datagram packet is modelised by the <code>Datagram</code> class (containing information about the address, the port, the data socket from which it stems, and the content length.). The UDP Client )<code>UDPClient</code> uses its 
+given address and port  to create a datagram socket, to in turn be able to send messages. </p>
+</body>
+</html>
